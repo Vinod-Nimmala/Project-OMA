@@ -7,12 +7,13 @@ import { AuthenticationGuard } from './authentication.guard';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { NotifyGuard } from './notify.guard';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'dashboard', canActivate:[AuthenticationGuard], component:DashboardComponent, children:[
     {path:'home', component:HomeComponent},
-    {path:'create-employee', component:CreateEmployeeComponent},
+    {path:'create-employee',canDeactivate:[NotifyGuard], component:CreateEmployeeComponent},
     {path:'employees', component:EmployeesComponent},
   ]},
   {path:'login',component:LoginComponent},

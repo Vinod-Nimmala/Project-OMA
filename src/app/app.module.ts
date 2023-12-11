@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { PackagePipe } from './package.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmployeesComponent } from './employees/employees.component';
     HomeComponent,
     CreateEmployeeComponent,
     PagenotfoundComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    PackagePipe
   ],
   imports: [
     BrowserModule,
