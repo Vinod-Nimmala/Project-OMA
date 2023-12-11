@@ -1,20 +1,20 @@
 
 <div class="create-employee" [formGroup]="CreateEmployeeForm">
     <marquee behavior="scroll" direction="rtl"><h1>Create Employee Details</h1></marquee>
-    <label for="">Name</label>
+    <label class="label-create" for="">Name</label>
     <input type="text" formControlName="name" placeholder="Enter employee name ">
     <div *ngIf="CreateEmployeeForm.get('name')?.touched || CreateEmployeeForm.get('name')?.dirty">
         <p *ngIf="CreateEmployeeForm.get('name')?.errors?.['required']">Employee Name is required</p>
     </div>
     <br>
-    <label for="">Gender</label>
+    <label class="label-create" for="">Gender</label>
     <input type="radio" name="gender" formControlName="gender" value="male">
     <label class="Gender-labels" for="">Male</label>
     <input type="radio" name="gender" formControlName="gender" value="female">
     <label class="Gender-labels" for="">Female</label>
     <br>
 
-    <label for="">Company</label>
+    <label class="label-create" for="">Company</label>
     <input type="text" formControlName="company" placeholder="Enter company name">
     <div *ngIf="CreateEmployeeForm.get('company')?.touched || CreateEmployeeForm.get('company')?.dirty">
         <p *ngIf="CreateEmployeeForm.get('company')?.errors?.['required']">Company name required</p>
