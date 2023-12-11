@@ -1,0 +1,46 @@
+body{
+ width:100vw;
+ height: auto;
+}
+.Login-page{
+    background-color: blueviolet;
+    width: 20%;
+    height: 30%;
+    margin:  100px;
+    margin-left: 400px !important;
+    padding: 150px;
+    border-radius: 10px;
+    border-top-right-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    box-shadow: 10px 10px 10px black;
+}
+label{
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 30px;
+}
+.Login-btn{
+    margin-left: 100px;
+    margin-top: 30px;
+    background-color: whitesmoke;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+.Login-btn:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+    width: 60px;
+
+}
+.create-employee-btn{
+    background-color: whitesmoke;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.create-employee-btn:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+    width: 150px;
+
+}

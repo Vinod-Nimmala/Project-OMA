@@ -1,0 +1,46 @@
+.DashBoard-Parent{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+ 
+}
+ .DashBoard-Child-left{
+  width: 20%;
+  height: 100%;
+  background-color: blueviolet;
+  overflow: auto;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 5px 5px 10px burlywood;
+}
+.DashBoard-Child-Right{
+    width: 80%;
+    height: 100%;
+    background-color: powderblue;   
+    overflow: auto;
+}
+
+h2{
+    padding-left: 50px;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+}
+h2:hover{
+    cursor: pointer;
+    width: auto;
+    background-color:aqua;
+    color: black;
+}
+.Logout-btn{
+    background-color: whitesmoke;
+    margin-left: 80px;
+    border-radius: 30px;
+    width: 80px;
+}
+.Logout-btn:hover{
+    cursor: pointer;
+    background-color: brown;
+    color: white;
+}

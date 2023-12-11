@@ -1,0 +1,14 @@
+
+<div class="Login-page" >
+    <form [formGroup]="loginform">
+        <h1>Employee Login</h1>
+        <label for="">Email</label>
+        <input type="email" placeholder="Enter email id" formControlName="email">
+        <br>
+        <label for="">Password</label>
+        <input type="password" placeholder="Enter password" formControlName="password">
+        <br>
+        <button class="Login-btn" (click)="login()">Login</button>
+        <!-- <p>Create new employee <button routerLink="create-employee" class="create-employee-btn">Create-Employee</button></p> -->
+    </form>
+</div>

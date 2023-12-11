@@ -1,0 +1,42 @@
+.search-sorting{
+ margin: 20px;
+}
+.filter-search{
+    margin-right: 150px;
+    border-radius: 8px;
+}
+select{
+    border-radius: 8px;
+    width: 100px;
+}
+
+.sorting-btn{
+    border-radius: 8px;
+    width: 80px;  
+    background-color: whitesmoke; 
+}
+.sorting-btn:hover{
+  cursor: pointer;
+  background-color: gray;
+  color: whitesmoke;
+}
+.pagination-select{
+    margin-left: 100px;
+    border-radius: 8px;
+    width: 100px;
+}
+.pagination-btn{
+    border-radius: 8px;
+    
+    background-color: whitesmoke; 
+
+}
+.pagination-btn:hover{
+    cursor: pointer;
+  background-color: gray;
+  color: whitesmoke;
+}
+
+.package{
+    color: whitesmoke;
+}

@@ -1,0 +1,75 @@
+ <div class="search-sorting">
+   <input class="filter-search" type="text" placeholder="Search here........" (keypress)="getfiltered()" [(ngModel)]="term">
+   
+   <!-- Select Options for Sorting process -->
+   <select [(ngModel)]="sortColumn">
+      <option value="name" >Name</option>
+      <option value="package">Package</option>
+      <option value="role">Role</option>
+   </select>
+   <select [(ngModel)]="sortOrder">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+   </select>
+   <button class="sorting-btn" (click)="sorting()">Sort</button>
+   <!-- Pagination select option -->
+   <select class="pagination-select" [(ngModel)]="pageno">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+   </select>
+   <button class="pagination-btn" (click)="pagination()">Page</button>
+ </div>
+
+ <!-- Table to interpolate the All employees data  -->
+<table border="1"  [(ngModel)]="employees">
+   <thead>
+     <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Package</th>
+        <th>Email</th>
+        <th>DOB</th>
+        <th>Address</th>
+        <th>Hikes</th>
+        <th>WorkMode</th>
+        <th>TravelBill</th>
+        <th>WifiBill</th>
+         <th>Actions</th>
+     </tr>
+   </thead>
+   <tbody>
+    <tr *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.company}}</td>
+        <td>{{employee.role}}</td>
+        <td class="package" [ngStyle]="{'background-color':employee.package>9 ? 'green' : 'red'}">{{employee.package}}LPA</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.dob|date:"yyyy-MM-dd"}}</td>
+        <td>{{employee.address?.addressLine}}-{{employee.address?.city}}-{{employee.address?.state}}-{{employee?.address.pincode}}</td>
+       <!--NgFor loop to interpolate the array of object value  -->
+        <td>
+            <tr *ngFor="let value of employee.hikes">
+               <td>{{value.year}}</td>
+               <td>{{value.percentage}}%</td>
+            </tr>
+        </td>
+      <td>{{employee.workMode}}</td>
+      <td>{{employee.travelBill}}</td>
+      <td>{{employee.wifiBill}}</td>
+      <td><button (click)="delete(employee.id)">Delete</button></td>
+    </tr>
+   </tbody>
+</table>
