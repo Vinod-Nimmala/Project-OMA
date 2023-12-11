@@ -16,7 +16,11 @@ export class DashboardComponent {
     this._router.navigateByUrl("/login");
     
   }
-  
-  
+  // To apply selected option highlightened
+  selectedOption: string | null = null;
 
+  selectOption(option: string): void {
+    this.selectedOption = option;
+}
+  
 }

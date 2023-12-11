@@ -23,13 +23,15 @@
 }
 
 h2{
-    padding-left: 50px;
+    padding-left: 20px;
+    // height: 50px;
     border-bottom-right-radius: 15px !important;
     border-top-left-radius: 15px !important;
 }
 h2:hover{
     cursor: pointer;
     width: auto;
+    // height: 50px;
     background-color:aqua;
     color: black;
 }
@@ -43,4 +45,25 @@ h2:hover{
     cursor: pointer;
     background-color: brown;
     color: white;
+}
+.option {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+  }
+  
+  .option:hover {
+    border-radius: 20px;
+    cursor: pointer;
+    width: auto;
+    background-color: aqua;
+    color: black;
+  }
+  
+  .selected {
+    border-radius: 20px;
+    cursor: pointer;
+    width: auto;
+    background-color: aqua;
+    color:black;
 }

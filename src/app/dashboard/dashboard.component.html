@@ -2,9 +2,9 @@
     <div class="DashBoard-Child-left">
         <marquee behavior="scroll" direction="rlt"><h1>Welcome to Dashboard</h1></marquee> 
         <hr>
-       <h2 routerLink="home">Home</h2>
-       <h2 routerLink="create-employee">Create Employee</h2>
-       <h2 routerLink="employees">All Employees</h2> 
+       <h2 class="option" [class.selected]="selectedOption === 'Option 1'" (click)="selectOption('Option 1')" routerLink="home">Home</h2>
+       <h2 class="option" [class.selected]="selectedOption === 'Option 2'" (click)="selectOption('Option 2')" routerLink="create-employee">Create Employee</h2>
+       <h2 class="option" [class.selected]="selectedOption === 'Option 3'" (click)="selectOption('Option 3')" routerLink="employees">All Employees</h2> 
        <button class="Logout-btn" (click)="logout()">Logout</button>
     </div>
     <div class="DashBoard-Child-Right">
