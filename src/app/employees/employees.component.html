@@ -51,7 +51,7 @@
    <tbody>
     <tr *ngFor="let employee of employees">
         <td>{{employee.id}}</td>
-        <td>{{employee.name}}</td>
+        <td>{{employee.name |uppercase}}</td>
         <td>{{employee.gender}}</td>
         <td>{{employee.company}}</td>
         <td>{{employee.role}}</td>
@@ -59,7 +59,8 @@
         <td>{{employee.email}}</td>
         <td>{{employee.dob|date:"yyyy-MM-dd"}}</td>
         <td>{{employee.address?.addressLine}}-{{employee.address?.city}}-{{employee.address?.state}}-{{employee?.address.pincode}}</td>
-       <!--NgFor loop to interpolate the array of object value  -->
+       
+        <!--NgFor loop to interpolate the array of object value in hikes array  -->
         <td>
             <tr *ngFor="let value of employee.hikes">
                <td>{{value.year}}</td>
