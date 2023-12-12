@@ -11,6 +11,7 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { PackagePipe } from './package.pipe';
+import { PercentagePipe } from './percentage.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PackagePipe } from './package.pipe';
     CreateEmployeeComponent,
     PagenotfoundComponent,
     EmployeesComponent,
-    PackagePipe
+    PackagePipe,
+    PercentagePipe
   ],
   imports: [
     BrowserModule,
