@@ -1,133 +1,136 @@
 
-<div class="create-employee" [formGroup]="CreateEmployeeForm">
-    <marquee behavior="scroll" direction="rtl"><h1>Create Employee Details</h1></marquee>
-    <label class="label-create" for="">Name</label>
-    <input type="text" formControlName="name" placeholder="Enter employee name ">
-    <div *ngIf="CreateEmployeeForm.get('name')?.touched || CreateEmployeeForm.get('name')?.dirty">
-        <p *ngIf="CreateEmployeeForm.get('name')?.errors?.['required']">Employee Name is required</p>
-    </div>
-    <br>
-    <label class="label-create" for="">Gender</label>
-    <input type="radio" name="gender" formControlName="gender" value="male">
-    <label class="Gender-labels" for="">Male</label>
-    <input type="radio" name="gender" formControlName="gender" value="female">
-    <label class="Gender-labels" for="">Female</label>
-    <br>
-
-    <label class="label-create" for="">Company</label>
-    <input type="text" formControlName="company" placeholder="Enter company name">
-    <div *ngIf="CreateEmployeeForm.get('company')?.touched || CreateEmployeeForm.get('company')?.dirty">
-        <p *ngIf="CreateEmployeeForm.get('company')?.errors?.['required']">Company name required</p>
-    </div>
-    <br>
-    <label for="">Role</label>
-    <input type="text" formControlName="role" placeholder="Enter employee role">
-    <div *ngIf="CreateEmployeeForm.get('role')?.touched || CreateEmployeeForm.get('role')?.dirty">
-    <p *ngIf="CreateEmployeeForm.get('role')?.errors?.['required']">Role is required</p>
-    </div>
-    <br>
-    <label for="">Package</label>
-    <input type="number" formControlName="package" placeholder="Enter package">
-    <div *ngIf="CreateEmployeeForm.get('package')?.touched || CreateEmployeeForm.get('package')?.dirty">
-        <p *ngIf="CreateEmployeeForm.get('package')?.errors?.['required']">Package is required</p>
-    </div>
-    <br>
-
-    <label for="">Email</label>
-    <input type="email" formControlName="email" placeholder="Enter employee email Id">
-    <div *ngIf="CreateEmployeeForm.get('email')?.touched || CreateEmployeeForm.get('email')?.dirty">
-        <p *ngIf="CreateEmployeeForm.get('email')?.errors?.['required']">Email is required</p>
-        <p *ngIf="CreateEmployeeForm.get('email')?.errors?.['email']">Invalid Email</p>
-
-    </div>
-    <br>
-
-    <label for="">DOB</label>
-    <input type="date" formControlName="dob" placeholder="Enter employee DOB">
-    <div *ngIf="CreateEmployeeForm.get('dob')?.touched || CreateEmployeeForm.get('dob')?.dirty">
-        <p *ngIf="CreateEmployeeForm.get('dob')?.errors?.['required']">Date of birth is required</p>
-        </div>
-    <br>
-
-   <div formGroupName="address"> 
+<div class="create-employee" >
     
-        <label for="">AddressLine</label>
-        <input type="text" formControlName="addressLine" placeholder="Enter employee address">
-        <div *ngIf="CreateEmployeeForm.get('address')?.get('addressLine')?.touched || CreateEmployeeForm.get('address')?.get('addressLine')?.dirty">
-            <p *ngIf="CreateEmployeeForm.get('address')?.get('addressLine')?.errors?.['required']">AddressLine is required</p>
-            </div>
-        <br>
-
-        <label for="">City</label>
-        <input type="text" formControlName="city" placeholder="Enter employee address">
-        <div *ngIf="CreateEmployeeForm.get('address')?.get('city')?.touched || CreateEmployeeForm.get('address')?.get('city')?.dirty">
-         <p *ngIf="CreateEmployeeForm.get('address')?.get('city')?.errors?.['required']">City name is required</p>
+    <form [formGroup]="CreateEmployeeForm">
+        <marquee behavior="scroll" direction="rtl"><h1>Create Employee Details</h1></marquee>
+        <label class="label-create" for="">Name</label>
+        <input type="text" formControlName="name" placeholder="Enter employee name ">
+        <div *ngIf="CreateEmployeeForm.get('name')?.touched || CreateEmployeeForm.get('name')?.dirty">
+            <p *ngIf="CreateEmployeeForm.get('name')?.errors?.['required']">Employee Name is required</p>
         </div>
-        <br>
+            <br>
+            <label class="label-create" for="">Gender</label>
+            <input type="radio" name="gender" formControlName="gender" value="male">
+            <label class="Gender-labels" for="">Male</label>
+            <input type="radio" name="gender" formControlName="gender" value="female">
+            <label class="Gender-labels" for="">Female</label>
+            <br>
 
-        <label for="">State</label>
-        <input type="text" formControlName="state" placeholder="Enter employee state">
-        <div *ngIf="CreateEmployeeForm.get('address')?.get('state')?.touched || CreateEmployeeForm.get('address')?.get('state')?.dirty">
-            <p *ngIf="CreateEmployeeForm.get('address')?.get('state')?.errors?.['required']">State name is required</p>
-        </div>
-        <br>
-
-
-        <label for="">Pincode</label>
-        <input type="text" formControlName="pincode" placeholder="Enter pincode">
-        <div *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.touched || CreateEmployeeForm.get('address')?.get('pincode')?.dirty">
-            <p *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.errors?.['required']">Pincode name is required</p>
-            <p *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.errors?.['min']">Minimum 6 characters required</p>
-            <p *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.errors?.['max']">Miximum 6 characters required</p>
-        </div>
-        <br>
-   </div>
-
-
-   <!-- Add method call to add multiple hikes -->
-   <button class="addHikes-button" (click)="addHikes()">AddHikes</button>
-   <div formArrayName="hikes">
-       <div *ngFor="let hike of hikesFormArray.controls; let i=index">
-        <div formGroupName="{{i}}">
-            <label for="">Year</label>
-            <input type="month" placeholder="Hiked year"  formControlName="year">
-            <div *ngIf="hikesFormArray.controls[i]?.get('year')?.touched || hikesFormArray.controls[i]?.get('year')?.dirty">
-                <p *ngIf="hikesFormArray.controls[i]?.get('year')?.errors?.['required']">Year is required</p>
+            <label class="label-create" for="">Company</label>
+            <input type="text" formControlName="company" placeholder="Enter company name">
+            <div *ngIf="CreateEmployeeForm.get('company')?.touched || CreateEmployeeForm.get('company')?.dirty">
+                <p *ngIf="CreateEmployeeForm.get('company')?.errors?.['required']">Company name required</p>
             </div>
             <br>
-            <label for="">Percentage</label>
-            <input type="number" placeholder="Enter Percentage of Hike" formControlName="percentage">
-            <div *ngIf="hikesFormArray.controls[i]?.get('percentage')?.touched || hikesFormArray.controls[i]?.get('percentage')?.dirty">
-                <p *ngIf="hikesFormArray.controls[i]?.get('percentage')?.errors?.['required']">Percentage is required</p>
+            <label for="">Role</label>
+            <input type="text" formControlName="role" placeholder="Enter employee role">
+            <div *ngIf="CreateEmployeeForm.get('role')?.touched || CreateEmployeeForm.get('role')?.dirty">
+            <p *ngIf="CreateEmployeeForm.get('role')?.errors?.['required']">Role is required</p>
             </div>
             <br>
-            <button class="Delete-button" (click)="delete(i)">Delete</button>
-            <hr>
+            <label for="">Package</label>
+            <input type="number" formControlName="package" placeholder="Enter package">
+            <div *ngIf="CreateEmployeeForm.get('package')?.touched || CreateEmployeeForm.get('package')?.dirty">
+                <p *ngIf="CreateEmployeeForm.get('package')?.errors?.['required']">Package is required</p>
+            </div>
+            <br>
+
+            <label for="">Email</label>
+            <input type="email" formControlName="email" placeholder="Enter employee email Id">
+            <div *ngIf="CreateEmployeeForm.get('email')?.touched || CreateEmployeeForm.get('email')?.dirty">
+                <p *ngIf="CreateEmployeeForm.get('email')?.errors?.['required']">Email is required</p>
+                <p *ngIf="CreateEmployeeForm.get('email')?.errors?.['email']">Invalid Email</p>
+
+            </div>
+            <br>
+
+            <label for="">DOB</label>
+            <input type="date" formControlName="dob" placeholder="Enter employee DOB">
+            <div *ngIf="CreateEmployeeForm.get('dob')?.touched || CreateEmployeeForm.get('dob')?.dirty">
+                <p *ngIf="CreateEmployeeForm.get('dob')?.errors?.['required']">Date of birth is required</p>
+                </div>
+            <br>
+
+        <div formGroupName="address"> 
+            
+                <label for="">AddressLine</label>
+                <input type="text" formControlName="addressLine" placeholder="Enter employee address">
+                <div *ngIf="CreateEmployeeForm.get('address')?.get('addressLine')?.touched || CreateEmployeeForm.get('address')?.get('addressLine')?.dirty">
+                    <p *ngIf="CreateEmployeeForm.get('address')?.get('addressLine')?.errors?.['required']">AddressLine is required</p>
+                    </div>
+                <br>
+
+                <label for="">City</label>
+                <input type="text" formControlName="city" placeholder="Enter employee address">
+                <div *ngIf="CreateEmployeeForm.get('address')?.get('city')?.touched || CreateEmployeeForm.get('address')?.get('city')?.dirty">
+                <p *ngIf="CreateEmployeeForm.get('address')?.get('city')?.errors?.['required']">City name is required</p>
+                </div>
+                <br>
+
+                <label for="">State</label>
+                <input type="text" formControlName="state" placeholder="Enter employee state">
+                <div *ngIf="CreateEmployeeForm.get('address')?.get('state')?.touched || CreateEmployeeForm.get('address')?.get('state')?.dirty">
+                    <p *ngIf="CreateEmployeeForm.get('address')?.get('state')?.errors?.['required']">State name is required</p>
+                </div>
+                <br>
+
+
+                <label for="">Pincode</label>
+                <input type="text" formControlName="pincode" placeholder="Enter pincode">
+                <div *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.touched || CreateEmployeeForm.get('address')?.get('pincode')?.dirty">
+                    <p *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.errors?.['required']">Pincode name is required</p>
+                    <p *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.errors?.['min']">Minimum 6 characters required</p>
+                    <p *ngIf="CreateEmployeeForm.get('address')?.get('pincode')?.errors?.['max']">Miximum 6 characters required</p>
+                </div>
+                <br>
         </div>
-       </div>  
-   </div>
-   <!-- Dynamic forms -->
-   <label for="">WorkMode</label>
-   <input type="radio" name="workMode" formControlName="workMode" value="workFromOffice">
-   <label class="lebel-wfo" for="">WorkFromOffice</label>
-   <input type="radio" name="workMode" formControlName="workMode" value="remote"> 
-   <label class="lebel-wfo" for="">Remote</label>
-   <br>
-   <!-- Div for to get the required label dynamically -->
-   <div *ngIf="CreateEmployeeForm.get('workMode')?.value=='workFromOffice'">
-    <label for="">TravelBill:</label>
-    <input type="number" formControlName="travelBill" placeholder="Enter TravelBill">
-    <div *ngIf="CreateEmployeeForm.get('travelBill')?.touched || CreateEmployeeForm.get('travelBill')?.dirty">
-        <p *ngIf="CreateEmployeeForm.get('travelBill')?.errors?.['required']">TravelBill is required</p>
-    </div>
-   </div>
-   <!--Div for to get the required label dynamically  -->
-   <div *ngIf="CreateEmployeeForm.get('workMode')?.value=='remote'">
-    <label for="">WifiBill</label>
-    <input type="number" formControlName="wifiBill" placeholder="Enter WifiBill">
-    <div *ngIf="CreateEmployeeForm.get('wifiBill')?.touched || CreateEmployeeForm.get('wifiBill')?.dirty">
-        <p *ngIf="CreateEmployeeForm.get('wifiBill')?.errors?.['required']">WifiBill is required</p>
-    </div>
-   </div>
-   <button class="submit-button" (click)="submit()">Submit</button>
+
+
+        <!-- Add method call to add multiple hikes -->
+        <button class="addHikes-button" (click)="addHikes()">AddHikes</button>
+        <div formArrayName="hikes">
+            <div *ngFor="let hike of hikesFormArray.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <label for="">Year</label>
+                    <input type="month" placeholder="Hiked year"  formControlName="year">
+                    <div *ngIf="hikesFormArray.controls[i]?.get('year')?.touched || hikesFormArray.controls[i]?.get('year')?.dirty">
+                        <p *ngIf="hikesFormArray.controls[i]?.get('year')?.errors?.['required']">Year is required</p>
+                    </div>
+                    <br>
+                    <label for="">Percentage</label>
+                    <input type="number" placeholder="Enter Percentage of Hike" formControlName="percentage">
+                    <div *ngIf="hikesFormArray.controls[i]?.get('percentage')?.touched || hikesFormArray.controls[i]?.get('percentage')?.dirty">
+                        <p *ngIf="hikesFormArray.controls[i]?.get('percentage')?.errors?.['required']">Percentage is required</p>
+                    </div>
+                    <br>
+                    <button class="Delete-button" (click)="delete(i)">Delete</button>
+                    <hr>
+                </div>
+            </div>  
+        </div>
+        <!-- Dynamic forms -->
+        <label for="">WorkMode</label>
+        <input type="radio" name="workMode" formControlName="workMode" value="workFromOffice">
+        <label class="lebel-wfo" for="">WorkFromOffice</label>
+        <input type="radio" name="workMode" formControlName="workMode" value="remote"> 
+        <label class="lebel-wfo" for="">Remote</label>
+        <br>
+        <!-- Div for to get the required label dynamically -->
+        <div *ngIf="CreateEmployeeForm.get('workMode')?.value=='workFromOffice'">
+            <label for="">TravelBill:</label>
+            <input type="number" formControlName="travelBill" placeholder="Enter TravelBill">
+            <div *ngIf="CreateEmployeeForm.get('travelBill')?.touched || CreateEmployeeForm.get('travelBill')?.dirty">
+                <p *ngIf="CreateEmployeeForm.get('travelBill')?.errors?.['required']">TravelBill is required</p>
+            </div>
+        </div>
+        <!--Div for to get the required label dynamically  -->
+        <div *ngIf="CreateEmployeeForm.get('workMode')?.value=='remote'">
+            <label for="">WifiBill</label>
+            <input type="number" formControlName="wifiBill" placeholder="Enter WifiBill">
+            <div *ngIf="CreateEmployeeForm.get('wifiBill')?.touched || CreateEmployeeForm.get('wifiBill')?.dirty">
+                <p *ngIf="CreateEmployeeForm.get('wifiBill')?.errors?.['required']">WifiBill is required</p>
+            </div>
+        </div>
+        <button class="submit-button" (click)="submit()">Submit</button>
+    </form>
 </div>

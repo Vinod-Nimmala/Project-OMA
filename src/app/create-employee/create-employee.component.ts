@@ -12,8 +12,6 @@ export class CreateEmployeeComponent {
   public CreateEmployeeForm:FormGroup= new FormGroup({
    name :new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(12)]),
    gender: new FormControl(),
-  //  male: new FormControl(null),
-  //  female: new FormControl(),
    company : new FormControl(null, [Validators.required]),
    role:new FormControl(null, [Validators.required]),
    package: new FormControl(null,[Validators.required]),
